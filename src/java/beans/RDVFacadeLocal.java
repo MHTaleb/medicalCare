@@ -1,15 +1,19 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
  */
 package beans;
 
+import java.time.LocalDate;
+
+import java.util.List;
+
+import javax.ejb.Local;
+
 import entity.Patient;
 import entity.RDV;
-import java.time.LocalDate;
-import java.util.List;
-import javax.ejb.Local;
 
 /**
  *
@@ -17,27 +21,28 @@ import javax.ejb.Local;
  */
 @Local
 public interface RDVFacadeLocal {
+    int count();
 
     void create(RDV rDV);
 
     void edit(RDV rDV);
 
-    void remove(RDV rDV);
-
-    List<RDV> findByDate(LocalDate date);
-    
-    List<RDV> findByDateAndPatient(LocalDate date, Patient patient);
-    
-    Integer getRDVCountByPatient(Patient p);
-    
-    List<RDV> findByValidation(boolean isValid);
-    
     RDV find(Object id);
 
     List<RDV> findAll();
 
+    List<RDV> findByDate(LocalDate date);
+
+    List<RDV> findByDateAndPatient(LocalDate date, Patient patient);
+
+    List<RDV> findByValidation(boolean isValid);
+
     List<RDV> findRange(int[] range);
 
-    int count();
-    
+    void remove(RDV rDV);
+
+    Integer getRDVCountByPatient(Patient p);
 }
+
+
+//~ Formatted by Jindent --- http://www.jindent.com

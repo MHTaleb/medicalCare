@@ -1,13 +1,16 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
  */
 package beans;
 
-import entity.Utilisateur;
 import java.util.List;
+
 import javax.ejb.Local;
+
+import entity.Utilisateur;
 
 /**
  *
@@ -15,12 +18,13 @@ import javax.ejb.Local;
  */
 @Local
 public interface UtilisateurFacadeLocal {
+    int count();
 
     void create(Utilisateur utilisateur);
 
-    void edit(Utilisateur utilisateur);
+    public Long doLogin(String username, String password);
 
-    void remove(Utilisateur utilisateur);
+    void edit(Utilisateur utilisateur);
 
     Utilisateur find(Object id);
 
@@ -28,8 +32,8 @@ public interface UtilisateurFacadeLocal {
 
     List<Utilisateur> findRange(int[] range);
 
-    int count();
-
-    public Long doLogin(String username, String password);
-    
+    void remove(Utilisateur utilisateur);
 }
+
+
+//~ Formatted by Jindent --- http://www.jindent.com

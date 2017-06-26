@@ -1,13 +1,16 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
  */
 package beans;
 
-import entity.Personne;
 import java.util.List;
+
 import javax.ejb.Local;
+
+import entity.Personne;
 
 /**
  *
@@ -15,12 +18,11 @@ import javax.ejb.Local;
  */
 @Local
 public interface PersonneFacadeLocal {
+    int count();
 
     void create(Personne personne);
 
     void edit(Personne personne);
-
-    void remove(Personne personne);
 
     Personne find(Object id);
 
@@ -28,6 +30,8 @@ public interface PersonneFacadeLocal {
 
     List<Personne> findRange(int[] range);
 
-    int count();
-    
+    void remove(Personne personne);
 }
+
+
+//~ Formatted by Jindent --- http://www.jindent.com

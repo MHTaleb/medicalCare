@@ -1,13 +1,16 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
  */
 package beans;
 
-import entity.Facture;
 import java.util.List;
+
 import javax.ejb.Local;
+
+import entity.Facture;
 
 /**
  *
@@ -15,12 +18,11 @@ import javax.ejb.Local;
  */
 @Local
 public interface FactureFacadeLocal {
+    int count();
 
     void create(Facture facture);
 
     void edit(Facture facture);
-
-    void remove(Facture facture);
 
     Facture find(Object id);
 
@@ -28,6 +30,8 @@ public interface FactureFacadeLocal {
 
     List<Facture> findRange(int[] range);
 
-    int count();
-    
+    void remove(Facture facture);
 }
+
+
+//~ Formatted by Jindent --- http://www.jindent.com
